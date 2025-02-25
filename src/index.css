@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Anek+Malayalam&family=Codystar&family=Italiana&display=swap");
+
+body {
+  background-color: rgb(206, 202, 202);
+  font-family: "Anek Malayalam", sans-serif;
+  /* font-family: "Codystar", cursive; */
+}
+
+.movie-vote-border {
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.movie-vote-border.green {
+  background-color: green;
+}
+
+.movie-vote-border.orange {
+  background-color: orange;
+}
+
+.movie-vote-border.red {
+  background-color: red;
+}
+
+.handmade-ellipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hover-text {
+  position: absolute;
+  font-family: "Italiana", serif;
+  color: white;
+  transform: translateY(220px) translateX(37px);
+  font-size: 3rem;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.hover-text .par {
+  transform: translateY(200px);
+  border: 3px solid red;
+  padding: 0.3rem 0.7rem;
+  transition: all 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.img-movie:hover .par {
+  transform: translateY(0);
+  color: red;
+  font-weight: 800;
+}
+
+@layer components {
+  .pagination-button {
+    @apply px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none;
+  }
+
+  .dropdown-button-navbar {
+    @apply dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100 cursor-pointer dark:hover:bg-gray-700 dark:text-white;
+  }
+
+  .input-box-login-register {
+    @apply block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40;
+  }
+  .error-msg-par {
+    @apply absolute top-[65px] text-xs mt-2 ml-2 text-red-600;
+  }
+
+  .sign-button {
+    @apply w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50;
+  }
+
+  .sign-with-google-button {
+    @apply w-full text-white bg-[#4285F4] hover:bg-[#4285F4]/50 hover:shadow-lg focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-center mb-2 transform transition-all duration-300;
+  }
+}
