@@ -7,7 +7,15 @@ import MovieDetail from '../pages/MovieDetail';
 import PrivateRouter from './PrivateRouter';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import useAuthCalls from '../hooks/useAuthCalls';
+import { useEffect } from 'react';
 const AppRouter = () => {
+ const  {userObserver} = useAuthCalls()
+
+  useEffect(() => {
+    userObserver()
+  }, [])
+  
   return (
     <>
       <Navbar />

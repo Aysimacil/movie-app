@@ -5,7 +5,7 @@ import useAuthCalls from '../hooks/useAuthCalls';
 import { useSelector } from 'react-redux';
 
 const Login = () => {
-  const {login}=useAuthCalls()
+  const {login, signUpGoogle}=useAuthCalls()
   const {loading} = useSelector(state => state.auth)
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
@@ -82,7 +82,7 @@ const Login = () => {
                   </button>
                 </div>
                 <div className='mt-6 flex justify-between'>
-                  <button type='button' className='sign-with-google-button'>
+                  <button onClick={signUpGoogle} type='button' className='sign-with-google-button'>
                     <GoogleIcon />
                     Sign in with Google
                   </button>
